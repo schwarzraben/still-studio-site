@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>STILL STUDIO | Estúdio criativo independente</title>
+<meta name="description" content="Branding e identidade visual, social media e motion design. A STILL STUDIO conecta estratégia, criatividade e design.">
+<meta name="theme-color" content="#0C1014">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=" js"</script>
+<style>
+:root{
+  --bg:#0C1014;
+  --bg-alt:#181818;
+  --surface:#25292E;
+  --surface-2:#2B3036;
+  --ink:#FEFEFE;
+  --accent:#E53242;
+  --muted:color-mix(in srgb,#FEFEFE 58%,#0C1014);
+  --line:#2B3036;
+  --on:#FEFEFE;
+  --d:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;
+  --b:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(4.5rem + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--b);-webkit-font-smoothing:antialiased}
+a{color:inherit}p{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.w{max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+h1,h2,h3{font-family:var(--d);font-weight:800;letter-spacing:-.025em;line-height:1.02;margin:0}
+h2{font-size:clamp(2rem,5vw,3.5rem)}
+section{padding:clamp(3.5rem,8vw,6.5rem) 0}
+.dot{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:var(--on);font:600 1rem var(--b);padding:.95rem 1.7rem;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--accent) 86%,#FEFEFE);box-shadow:0 12px 28px -12px color-mix(in srgb,var(--accent) 70%,transparent)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--surface-2)}
+.btn.ghost:hover{background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--accent);color:var(--accent)}
+.btn[disabled]{opacity:.6;cursor:wait;transform:none;box-shadow:none}
+/* cursor */
+.js .cursor{position:fixed;top:0;left:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:80;opacity:0;transform:translate(-100px,-100px) scale(1);transition:opacity .2s}
+.js .cursor.on{opacity:1}
+@media(pointer:fine){
+  html.js,html.js body,html.js a,html.js button,html.js summary,html.js input,html.js select,html.js textarea{cursor:none}
+}
+@media(pointer:coarse){.cursor{display:none!important}}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;padding:calc(.8rem + env(safe-area-inset-top,0px)) 0 .8rem;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);transition:box-shadow .3s,background .3s}
+.nav.sc{box-shadow:0 1px 0 var(--line);background:color-mix(in srgb,var(--bg) 94%,transparent)}
+.nav .w{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font:800 1.4rem var(--d);letter-spacing:-.03em;text-decoration:none}.logo i{font-style:normal;color:var(--accent);transition:transform .25s}
+.logo:hover i{transform:scale(1.35)}
+.links{display:flex;gap:.3rem;background:var(--surface);padding:.3rem;border-radius:999px}
+.links a{padding:.5rem 1rem;border-radius:999px;text-decoration:none;font-size:.93rem;font-weight:500;transition:background .2s,color .2s}
+.links a:hover{background:var(--surface-2);color:var(--accent)}
+.nav .btn{padding:.65rem 1.2rem;font-size:.92rem}
+@media(max-width:760px){.links{display:none}}
+/* hero */
+.hero{position:relative;overflow:hidden;text-align:center;padding:clamp(3.5rem,9vw,7rem) 0 clamp(6rem,12vw,9rem);background:var(--bg)}
+.hero .w{position:relative;z-index:2}
+.mark{position:absolute;left:50%;top:clamp(1.2rem,4vw,2.4rem);width:2px;height:3.2rem;background:var(--accent);transform:translateX(-50%);pointer-events:none;animation:markIn .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes markIn{from{transform:translateX(-50%) scaleY(0);transform-origin:top}to{transform:translateX(-50%) scaleY(1);transform-origin:top}}
+.badge{display:inline-flex;align-items:center;gap:.55rem;background:var(--surface);padding:.45rem 1rem;border-radius:999px;font-size:.9rem;font-weight:500;animation:fade .7s both;margin-top:1.5rem}
+.badge::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 .4rem color-mix(in srgb,var(--accent) 22%,transparent)}}
+.hero h1{font-size:clamp(2.8rem,9vw,7rem);max-width:13ch;margin:1.5rem auto 0;line-height:.95}
+.wd{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .04em .12em}
+.wd>span{display:inline-block;animation:up .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(.15s + var(--i)*.08s);transition:color .25s}
+.hero h1:hover .wd>span{color:var(--accent)}
+.hero h1:hover .dot{color:var(--ink)}
+.hero .sub{max-width:46ch;margin:1.6rem auto 0;font-size:clamp(1.05rem,2vw,1.3rem);animation:fade .8s .75s both;color:var(--muted)}
+.hero .acts{margin-top:2rem;animation:fade .8s .9s both}
+@keyframes up{from{transform:translateY(105%);opacity:0}to{transform:none;opacity:1}}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes pop{from{transform:scale(.7);opacity:.3}to{transform:none;opacity:1}}
+.rule{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line)}
+/* projetos */
+.head{margin-bottom:2.5rem}
+.pg{display:grid;gap:1.25rem;grid-template-columns:1fr}
+@media(min-width:700px){.pg{grid-template-columns:1fr 1fr}}
+.pc{margin:0}.art{aspect-ratio:5/4;border-radius:22px;overflow:hidden;background:var(--surface)}
+.art svg{display:block;width:100%;height:100%;transition:transform .7s cubic-bezier(.2,.7,.2,1)}.pc:hover .art svg{transform:scale(1.07)}
+.pc figcaption{display:flex;justify-content:space-between;padding:.9rem .4rem 0;gap:1rem}.pc figcaption span{color:var(--muted)}
+.pc:hover figcaption strong{color:var(--accent)}
+.note{text-align:center;color:var(--muted);margin-top:2rem;font-size:.95rem}
+/* serviços */
+.sv{background:var(--bg-alt)}
+.sg{display:grid;gap:2.5rem}
+@media(min-width:900px){.sg{grid-template-columns:.8fr 1.2fr;gap:5rem}}
+.svx{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.svx li{padding:1.5rem 0;border-bottom:1px solid var(--line);transition:padding-left .3s,color .3s}
+.svx li:hover{padding-left:1rem;color:var(--accent)}
+.svx h3{font-size:clamp(1.7rem,3.6vw,2.6rem);letter-spacing:-.02em}
+.svx p{color:var(--muted);margin-top:.5rem;max-width:46ch}
+.svx li:hover p{color:color-mix(in srgb,var(--accent) 55%,var(--ink))}
+/* estúdio */
+.ab{display:grid;gap:2.5rem}
+@media(min-width:860px){.ab{grid-template-columns:1fr 1.1fr;gap:5rem}}
+.ab p+p{margin-top:1rem}.ab .t{color:var(--muted)}
+.dg{display:grid;gap:1rem;margin-top:2rem;grid-template-columns:1fr}
+@media(min-width:600px){.dg{grid-template-columns:1fr 1fr}}
+.dg div{background:var(--surface);border:1px solid var(--surface-2);border-radius:16px;padding:1rem 1.2rem;transition:border-color .25s,transform .25s}
+.dg div:hover{border-color:var(--accent);transform:translateY(-2px)}
+.dg b{display:block;font:800 1.1rem var(--d);margin-bottom:.2rem}.dg span{color:var(--muted);font-size:.95rem}
+/* faq */
+#duvidas{background:var(--bg-alt)}
+.fq{display:grid;gap:3rem}
+@media(min-width:860px){.fq{grid-template-columns:.8fr 1.2fr;gap:5rem}}
+details{border-bottom:1px solid var(--line);padding:1.2rem 0}
+summary{cursor:pointer;font:700 1.15rem var(--d);list-style:none;display:flex;justify-content:space-between;gap:1rem;transition:color .2s}
+summary:hover{color:var(--accent)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:1.6rem;line-height:1;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+details[open] summary{color:var(--accent)}
+details[open] summary::after{transform:rotate(135deg)}
+details p{color:var(--muted);margin-top:.8rem;max-width:56ch}
+/* cta */
+.cta{padding:clamp(3.5rem,8vw,6.5rem) 0;background:var(--bg)}
+.cb{background:var(--surface);color:var(--ink);border-radius:28px;padding:clamp(2rem,6vw,4rem);display:grid;gap:1.5rem;justify-items:start;position:relative;overflow:hidden}
+.cb::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+.cb h2{max-width:16ch}.cb p{max-width:44ch;color:var(--muted)}
+/* proposta */
+.pp{background:var(--bg-alt);min-height:100svh;display:grid;align-items:center}
+.pp .pi{max-width:860px;margin:0 auto;width:100%}
+.pp h2{margin-bottom:.8rem}.pp .fi{color:var(--muted);max-width:56ch;margin-bottom:2rem}
+.fm{background:var(--surface);border-radius:28px;padding:clamp(1.5rem,4vw,2.75rem)}
+fieldset{border:0;padding:0;margin:0 0 2rem;min-width:0}
+legend{font:800 1.25rem var(--d);letter-spacing:-.02em;padding:0;margin-bottom:1.1rem;display:flex;gap:.65rem;align-items:center}
+legend span{display:grid;place-items:center;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--accent);color:var(--on);font:600 .9rem var(--b)}
+.fg{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:700px){.fg{grid-template-columns:1fr 1fr}.fg .full{grid-column:1/-1}}
+label{display:grid;gap:.4rem;font-weight:600;font-size:.95rem;align-content:start}
+label small{font-weight:400;color:var(--muted)}
+input,select,textarea{font:400 1rem var(--b);color:var(--ink);background:var(--surface-2);border:1.5px solid var(--line);border-radius:12px;padding:.85rem 1rem;width:100%;transition:border-color .2s,box-shadow .2s;color-scheme:dark}
+input::placeholder,textarea::placeholder{color:var(--muted)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
+input.bad,textarea.bad{border-color:var(--accent)}
+textarea{min-height:8rem;resize:vertical}
+.err{color:var(--accent);font-size:.88rem;font-weight:500;min-height:1.1em}
+.hp{position:absolute;left:-9999px;opacity:0}
+.fe{color:var(--accent);font-weight:500;margin-top:1rem;min-height:1.2em}
+.ok{display:none;text-align:center;padding:2.5rem 0;outline:none}
+.ok h3{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:.8rem}.ok p{color:var(--muted);max-width:44ch;margin:0 auto}
+.ok small{display:block;margin-top:1rem;color:var(--muted)}
+.fm.done form{display:none}.fm.done .ok{display:block;animation:pop .6s cubic-bezier(.2,.8,.2,1) both}
+/* rodapé */
+.ft{padding-bottom:0;overflow:hidden;background:var(--bg)}
+.big{font:800 clamp(6rem,30vw,24rem)/.78 var(--d);letter-spacing:-.06em;color:var(--accent);margin:0 0 0 -.04em;white-space:nowrap;overflow:hidden;padding-bottom:.06em;display:flex}
+.big span{display:inline-block;transition:color .25s}
+.big:hover span{color:var(--ink)}
+.big:hover span:nth-child(odd){color:var(--accent)}
+.copy{border-top:1px solid var(--line);padding:1.2rem 0;color:var(--muted);font-size:.92rem;background:var(--bg)}
+.copy .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+/* revelar ao rolar */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) var(--d,0s),transform .8s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.js .big span{transform:translateY(105%);transition:transform 1s cubic-bezier(.2,.8,.2,1) calc(var(--i)*.09s),color .25s}
+.js .big.in span{transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv,.js .big span{opacity:1;transform:none}
+  .js .cursor{display:none!important}
+  html.js,html.js body,html.js a,html.js button,html.js summary,html.js input,html.js select,html.js textarea{cursor:auto}
+}
+</style>
+</head>
+<body>
+<div class="cursor" aria-hidden="true"></div>
+<header class="nav"><div class="w">
+  <a class="logo" href="#topo">STILL<i>.</i></a>
+  <nav class="links" aria-label="Principal"><a href="#projetos">Projetos</a><a href="#servicos">Serviços</a><a href="#estudio">Estúdio</a><a href="#duvidas">Dúvidas</a></nav>
+  <a class="btn" href="#proposta">Solicitar proposta</a>
+</div></header>
+
+<main id="topo">
+<section class="hero">
+  <span class="mark" aria-hidden="true"></span>
+  <div class="w">
+    <span class="badge">Aberto a novos projetos</span>
+    <h1 aria-label="Design que faz sua marca ser entendida."><span class="wd" style="--i:0"><span>Design</span></span> <span class="wd" style="--i:1"><span>que</span></span> <span class="wd" style="--i:2"><span>faz</span></span> <span class="wd" style="--i:3"><span>sua</span></span> <span class="wd" style="--i:4"><span>marca</span></span> <span class="wd" style="--i:5"><span>ser</span></span> <span class="wd" style="--i:6"><span>entendida<span class="dot">.</span></span></span></h1>
+    <p class="sub">A STILL STUDIO conecta estratégia, criatividade e design para transformar ideias em experiências visuais relevantes.</p>
+    <div class="acts"><a class="btn" href="#proposta">Solicitar proposta</a></div>
+  </div>
+  <div class="rule" aria-hidden="true"></div>
+</section>
+
+<section id="projetos"><div class="w">
+  <div class="head"><h2>Projetos selecionados</h2></div>
+  <div class="pg">
+    <figure class="pc"><div class="art"><svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="500" height="400" fill="#E53242"/><circle cx="190" cy="200" r="110" fill="#FEFEFE"/><circle cx="320" cy="200" r="110" fill="none" stroke="#0C1014" stroke-width="12"/></svg></div><figcaption><strong>Branding e identidade visual</strong><span>Marca</span></figcaption></figure>
+    <figure class="pc"><div class="art"><svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="500" height="400" fill="#0C1014"/><path d="M60 400 Q250 90 440 400Z" fill="#E53242"/><rect x="60" y="60" width="130" height="12" fill="#FEFEFE"/><rect x="60" y="86" width="86" height="12" fill="#FEFEFE"/></svg></div><figcaption><strong>Social media</strong><span>Direção de arte</span></figcaption></figure>
+    <figure class="pc"><div class="art"><svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="500" height="400" fill="#25292E"/><g fill="#E53242"><rect x="70" y="220" width="64" height="110"/><rect x="154" y="160" width="64" height="170"/><rect x="238" y="100" width="64" height="230"/></g><circle cx="390" cy="140" r="56" fill="#FEFEFE"/></svg></div><figcaption><strong>Motion design</strong><span>Animação</span></figcaption></figure>
+    <figure class="pc"><div class="art"><svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="500" height="400" fill="#181818"/><rect x="80" y="60" width="340" height="280" fill="none" stroke="#FEFEFE" stroke-width="8"/><rect x="115" y="95" width="160" height="210" fill="#E53242"/><rect x="300" y="95" width="85" height="80" fill="#2B3036"/></svg></div><figcaption><strong>Identidade para projetos culturais</strong><span>Cartaz</span></figcaption></figure>
+  </div>
+  <p class="note">Cases completos em atualização.</p>
+</div></section>
+
+<section id="servicos" class="sv"><div class="w sg">
+  <h2>No que somos mais fortes<span class="dot">.</span></h2>
+  <ul class="svx">
+    <li><h3>Branding e identidade visual</h3><p>Marcas com personalidade e consistência em todos os pontos de contato.</p></li>
+    <li><h3>Social media</h3><p>Linha visual e direção de arte para redes com assinatura própria.</p></li>
+    <li><h3>Motion design</h3><p>Animação que dá ritmo e vida às suas ideias.</p></li>
+  </ul>
+</div></section>
+
+<section id="estudio"><div class="w ab">
+  <h2>Um estúdio independente que pensa antes de desenhar<span class="dot">.</span></h2>
+  <div>
+    <p>A STILL STUDIO desenvolve soluções visuais e criativas para marcas, empresas, projetos culturais e iniciativas comerciais.</p>
+    <p class="t">Nosso trabalho vai além de entregar peças gráficas: pensamos, construímos e desenvolvemos soluções que ajudam marcas e projetos a se comunicarem melhor.</p>
+    <div class="dg">
+      <div><b>Estratégia e design juntos</b><span>Cada peça nasce de uma ideia clara.</span></div>
+      <div><b>Conversa direta</b><span>Você fala com quem cria o seu projeto.</span></div>
+      <div><b>Do digital ao impresso</b><span>Marca, redes, vídeo, motion e gráfica.</span></div>
+      <div><b>IA com direção humana</b><span>Tecnologia para ampliar a criação.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="duvidas"><div class="w fq">
+  <h2>Perguntas frequentes</h2>
+  <div>
+    <details><summary>Quanto tempo leva um projeto?</summary><p>Depende do escopo. Informamos o prazo estimado junto com a proposta.</p></details>
+    <details><summary>Vocês trabalham com marcas que já existem?</summary><p>Sim. Podemos partir da sua identidade atual ou construir uma nova, conforme a necessidade.</p></details>
+    <details><summary>Atendem projetos culturais, esportivos e institucionais?</summary><p>Sim. Esses projetos fazem parte da nossa atuação, além de marcas e empresas.</p></details>
+    <details><summary>Vocês usam inteligência artificial?</summary><p>Usamos a IA como ferramenta dentro do processo criativo, sempre com direção e revisão humana.</p></details>
+    <details><summary>Como peço uma proposta?</summary><p>Pelo formulário desta página. A partir das suas respostas, entramos em contato com os próximos passos.</p></details>
+  </div>
+</div></section>
+
+<section class="cta"><div class="w"><div class="cb">
+  <h2>Ainda tem dúvidas? Conte sobre o seu projeto.</h2>
+  <p>Responda ao formulário de proposta e entraremos em contato com os próximos passos.</p>
+  <a class="btn" href="#proposta">Solicitar proposta</a>
+</div></div></section>
+
+<section id="proposta" class="pp"><div class="w"><div class="pi">
+  <h2>Solicite uma proposta<span class="dot">.</span></h2>
+  <p class="fi">Este formulário é o primeiro passo para entendermos os desafios e objetivos do seu projeto. Leva poucos minutos.</p>
+  <div class="fm">
+    <form id="f" novalidate>
+      <fieldset><legend><span>1</span>Dados de contato</legend><div class="fg">
+        <label>Qual é o seu nome completo?<input name="nome" autocomplete="name" required><span class="err" data-for="nome"></span></label>
+        <label>Informe seu melhor e-mail<input name="email" type="email" autocomplete="email" required><span class="err" data-for="email"></span></label>
+        <label>WhatsApp com DDD <small>(opcional)</small><input name="whats" type="tel" autocomplete="tel" inputmode="tel"></label>
+        <label>Instagram <small>(se houver)</small><input name="insta" placeholder="@seuperfil"></label>
+      </div></fieldset>
+      <fieldset><legend><span>2</span>Sobre a empresa ou projeto</legend><div class="fg">
+        <label>Nome da empresa ou do projeto<input name="empresa"></label>
+        <label>Tamanho da equipe<select name="porte"><option value="">Selecione uma opção</option><option>Profissional liberal</option><option>Micro (2 a 10 pessoas)</option><option>Pequena (11 a 50 pessoas)</option><option>Média (51 a 100 pessoas)</option><option>Grande (mais de 100 pessoas)</option><option>Projeto cultural ou independente</option></select></label>
+        <label class="full">Quais produtos ou serviços vocês oferecem?<input name="oferta"></label>
+      </div></fieldset>
+      <fieldset><legend><span>3</span>Sobre o que você precisa</legend><div class="fg">
+        <label>O que você procura?<select name="servico"><option value="">Selecione uma opção</option><option>Branding e identidade visual</option><option>Social media</option><option>Motion design</option><option>Outro</option><option>Ainda não sei</option></select></label>
+        <label>Prazo desejado<select name="prazo"><option value="">Selecione uma opção</option><option>Sem pressa</option><option>Em até 1 mês</option><option>De 1 a 3 meses</option><option>É urgente</option></select></label>
+        <label class="full">Como nos encontrou?<select name="origem"><option value="">Selecione uma opção</option><option>Instagram</option><option>Google</option><option>Indicação</option><option>LinkedIn</option><option>Behance</option><option>Outro</option></select></label>
+        <label class="full">Fale um pouco sobre o projeto e os principais desafios<textarea name="desafio" required></textarea><span class="err" data-for="desafio"></span></label>
+      </div></fieldset>
+      <input class="hp" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Enviar solicitação</button>
+      <p class="fe" id="fe" role="alert"></p>
+    </form>
+    <div class="ok" role="status" tabindex="-1"><h3>Solicitação enviada!</h3><p>Recebemos as suas respostas e entraremos em contato com os próximos passos.</p><small id="demo" hidden>Modo demonstração: nenhuma resposta foi realmente enviada.</small></div>
+  </div>
+</div></div></section>
+</main>
+
+<footer class="ft"><div class="w"><p class="big" aria-hidden="true"><span style="--i:0">S</span><span style="--i:1">T</span><span style="--i:2">I</span><span style="--i:3">L</span><span style="--i:4">L</span></p></div>
+<div class="copy"><div class="w"><span>© 2026 STILL STUDIO</span><span>Estúdio criativo independente</span></div></div></footer>
+
+<script>
+// Para receber as propostas no seu próprio site, coloque aqui a URL do serviço de formulário (recebe POST em JSON).
+var FORM_ENDPOINT="";
+(function(){
+ var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+ var fine=matchMedia("(pointer:fine)").matches;
+ var rv=[].slice.call(document.querySelectorAll(".pc,.svx li,.dg div,details,.cb,.head,.sg>h2,.ab>h2,.ab>div,.fq>h2,.pp .pi>*")),cnt=new Map();
+ rv.forEach(function(el){el.classList.add("rv");var p=el.parentNode,n=cnt.get(p)||0;cnt.set(p,n+1);el.style.setProperty("--d",Math.min(n,8)*0.07+"s")});
+ var big=document.querySelector(".big"),all=big?rv.concat([big]):rv;
+ var io="IntersectionObserver" in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12}):null;
+ all.forEach(function(el){io?io.observe(el):el.classList.add("in")});
+ var nav=document.querySelector(".nav");
+ addEventListener("scroll",function(){nav.classList.toggle("sc",scrollY>8)},{passive:true});
+ /* cursor */
+ var cur=document.querySelector(".cursor");
+ if(cur&&fine&&!reduce){
+  var x=innerWidth/2,y=innerHeight/2,tx=x,ty=y,hot=false,raf=0;
+  function loop(){
+   x+=(tx-x)*.22;y+=(ty-y)*.22;
+   cur.style.transform="translate("+x+"px,"+y+"px) scale("+(hot?2.4:1)+")";
+   raf=requestAnimationFrame(loop);
+  }
+  addEventListener("pointermove",function(e){
+   tx=e.clientX;ty=e.clientY;cur.classList.add("on");
+   var t=e.target.closest("a,button,summary,input,select,textarea,.pc,.dg div");
+   hot=!!t;
+  },{passive:true});
+  addEventListener("pointerleave",function(){cur.classList.remove("on")});
+  loop();
+ }
+ /* FAQ animado */
+ document.querySelectorAll("details").forEach(function(d){
+  var s=d.querySelector("summary"),c=d.querySelector("p");
+  s.addEventListener("click",function(e){
+   e.preventDefault();
+   if(reduce){d.open=!d.open;return}
+   if(d.dataset.busy)return;d.dataset.busy="1";c.style.overflow="hidden";
+   if(!d.open){d.open=true;var h=c.offsetHeight;
+    c.animate([{height:"0px",opacity:0,marginTop:"0px"},{height:h+"px",opacity:1,marginTop:".8rem"}],{duration:380,easing:"cubic-bezier(.2,.7,.2,1)"}).onfinish=function(){c.style.overflow="";delete d.dataset.busy}
+   }else{var h2=c.offsetHeight;
+    c.animate([{height:h2+"px",opacity:1},{height:"0px",opacity:0,marginTop:"0px"}],{duration:300,easing:"ease"}).onfinish=function(){d.open=false;c.style.overflow="";delete d.dataset.busy}
+   }
+  });
+ });
+ /* formulário */
+ var f=document.getElementById("f"),fe=document.getElementById("fe");
+ async function send(data){
+  if(FORM_ENDPOINT){
+   var r=await fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});
+   if(!r.ok)throw new Error("http "+r.status);return "ok"
+  }
+  try{if(window.claude&&claude.use){var db=await claude.use("db");if(db){await db.collection("propostas").add(data);return "ok"}}}catch(e){}
+  return "demo"
+ }
+ f.addEventListener("submit",async function(e){
+  e.preventDefault();fe.textContent="";if(f._hp.value)return;
+  var chk=[["nome","Informe seu nome."],["email","Informe um e-mail válido."],["desafio","Conte um pouco sobre o projeto."]],ok=true;
+  chk.forEach(function(r){var el=f[r[0]],v=el.value.trim(),bad=!v||(r[0]==="email"&&!/^\S+@\S+\.\S+$/.test(v));el.classList.toggle("bad",bad);f.querySelector('[data-for="'+r[0]+'"]').textContent=bad?r[1]:"";if(bad)ok=false});
+  if(!ok){f.querySelector(".bad").focus();return}
+  var data={projeto:"STILL STUDIO",enviadoEm:new Date().toISOString()};
+  ["nome","email","whats","insta","empresa","porte","oferta","servico","prazo","origem","desafio"].forEach(function(k){data[k]=f[k].value.trim()});
+  var btn=f.querySelector("button");btn.disabled=true;btn.textContent="Enviando...";
+  try{
+   var res=await send(data);
+   document.getElementById("demo").hidden=res!=="demo";
+   f.parentNode.classList.add("done");f.parentNode.querySelector(".ok").focus();
+  }catch(err){fe.textContent="Não foi possível enviar agora. Tente novamente em instantes."}
+  btn.disabled=false;btn.textContent="Enviar solicitação";
+ });
+})();
+</script>
+</body>
+</html>
